@@ -8,6 +8,7 @@ import { handler as queryBooksHandler } from './resolvers/queryBooks'
 import { handler as queryAuthorsHandler } from './resolvers/queryAuthors'
 import { handler as bookAuthorHandler } from './resolvers/bookAuthor'
 import { handler as authorBooksHandler } from './resolvers/authorBooks'
+import { handler as mutationAddBooks } from "./resolvers/mutationAddBooks";
 import { schema } from "./schema"
 import { readVTL } from './vtl/readVTL'
 import { resolversConfig } from './resolversConfig'
@@ -52,7 +53,7 @@ class AppSyncSimulator {
                 {
                     type: 'AWS_LAMBDA',
                     name: 'MutationBooksDataSource',
-                    invoke: queryBooksHandler,
+                    invoke: mutationAddBooks,
                 },
                 {
                     type: 'AWS_LAMBDA',

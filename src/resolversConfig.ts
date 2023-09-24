@@ -27,6 +27,14 @@ export const resolversConfig: (AppSyncSimulatorPipelineResolverConfig | AppSyncS
     },
     {
         kind: RESOLVER_KIND.UNIT,
+        typeName: "Subscription",
+        fieldName: "onAddBook",
+        dataSourceName: "MutationBooksDataSource",
+        requestMappingTemplateLocation: "lambdaRequestMappingTemplate.vtl",
+        responseMappingTemplateLocation: "lambdaResponseMappingTemplate.vtl"
+    },
+    {
+        kind: RESOLVER_KIND.UNIT,
         typeName: "Book",
         fieldName: "author",
         dataSourceName: "BookAuthorDataSource",
